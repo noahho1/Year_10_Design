@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diverse Page</title>
+</head>
+<body>
+
+
+<p>First Name</p>
+<input type = "text" id = "fname">
+
+<p>Last Name</p>
+<input type = "text" id = "lname">
+
+<input type="submit" onclick = "click()">
+
+
+
+<script>
+	
+function click(){
+	fname = document.getElementById("fname").value
+	console.log(fname)
+
+
+	lname = document.getElementById("lname").value
+	console.log(lname)
+
+	fullname = fname + " " + lname
+	console.log(fullname)
+
+	var result = [1,2,3]
+
+	fetch("https://api.diversitydata.io/?fullname="+ fullname)
+  	.then((response) => response.json())
+  	.then (function(data) {
+  		result = data
+  		console.log("IN FETCH: ",result)
+
+
+  	});
+
+}
+</script>
+
+</body>
+</html>
