@@ -14,6 +14,9 @@
 
 <input type="submit" onclick = "click()">
 
+<div id = "output">
+
+</div>
 
 
 <script>
@@ -36,6 +39,11 @@ function click(){
   	.then (function(data) {
   		result = data
   		console.log("IN FETCH: ",result)
+
+  	output = document.getElementById("output")
+  	pname = document.getElementById("p")
+  	pname.innerHTML = "hello"
+  	output.append(pname)
 
 
   	});
