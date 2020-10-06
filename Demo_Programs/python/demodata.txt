@@ -1,0 +1,12 @@
+[
+	{
+	"id": 1,
+    "name": "Noah Ho",
+    "email": "noah.ho@ucc.on.ca",
+    "password": "password",
+	}
+]
+
+
+
+
