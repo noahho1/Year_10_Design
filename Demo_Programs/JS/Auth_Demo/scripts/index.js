@@ -21,9 +21,9 @@ function checkCred(u, p){
 	return false
 }
 
-x = checkCred("user5@test.com", "pword1")
-console.log(x)
-x = checkCred("user1@test.com", "pword1")
-console.log(x)
-x = checkCred("user1@test.com", "pword6")
-console.log(x)
+//x = checkCred("user5@test.com", "pword1")
+//console.log(x)
+//x = checkCred("user1@test.com", "pword1")
+//console.log(x)
+//x = checkCred("user1@test.com", "pword6")
+//console.log(x)

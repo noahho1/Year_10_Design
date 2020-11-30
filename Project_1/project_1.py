@@ -1,46 +1,55 @@
 import tkinter as tk
-import requests
-import json
+
+uNames = ["user1@test.com", "user2@test.com"]
+pWords = ["pword1", "pword2"]
+
+#Write the code to
+	#Step 1: Take entry for user name
+	#Step 2: Take entry for password
+	#Step 3: Loop through usernames and check if valid with password
+
+	#If the username and password is correct swap frames. 
+
+def checkCred(*arg):
+
+	print("Checking")
 
 
-root = tk.Tk()
-root.geometry('500x200')
+#THIS IS HOW TO SWITCH FRAMES
+	loginFrame.pack_forget()
+	homeFrame.pack()
 
-f1 = tk.Frame(highlightbackground = "black", highlightthickness=1)
-f2 = tk.Frame(highlightbackground = "black", highlightthickness=1)
-f3 = tk.Frame(highlightbackground = "black", highlightthickness=1)
+root = tk.Tk() #Creates your main window
+root.geometry('400x600')
+#Build a login frame
+loginFrame = tk.Frame(root)
 
+labunLF = tk.Label(loginFrame,text = "User Name:", anchor = center)
+entunLF = tk.Entry(loginFrame, width = 20, anchor = center)
 
+labpwLF = tk.Label(loginFrame,text = "Password", anchor = center)
+entpwLF = tk.Entry(loginFrame, width = 20, anchor = center)
 
-cur_label = tk.Label(f1, text = "Hello World")
+submitLF = tk.Button(loginFrame, text = "Submit", command = checkCred, anchor = center)
 
+labunLF.pack()
+entunLF.pack()
 
-cur_label.pack()
+labpwLF.pack()
+entpwLF.pack()
 
+submitLF.pack()
 
+#Build a home page frame
+homeFrame = tk.Frame(root)
 
+labHF = tk.Label(homeFrame, text = "Welcome!")
 
-input1_label = tk.Label(f2, text = "Text")
-input2_label = tk.Label(f2, text = "Lorem Ipsum")
-
-
-input1_label.pack()
-input2_label.pack()
-
-
-info_btn1 = tk.Button(f3, text = "Button", width = 10)
-
-
-info_btn1.pack(side = tk.LEFT)
-
-
-f1.grid(row = 0, column = 0, sticky = "NESW", padx = 5, pady = 5, ipadx = 2, ipady = 2)
-f2.grid(row = 1, column = 0, sticky = "NESW", padx = 5, pady= 5, ipadx = 2, ipady = 2)
-f3.grid(row = 0, column = 1, rowspan = 2,sticky = "NESW", padx = 5, pady = 5, ipadx = 2, ipady = 2)
+labHF.pack()
 
 
 
-root.mainloop()
+loginFrame.pack()
 root.mainloop()
 
 
