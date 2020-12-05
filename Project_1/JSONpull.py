@@ -4,8 +4,9 @@ from pprint import pprint
 import random
 
 
-resp = requests.get("https://raw.githubusercontent.com/PMiskew/Year_10_Design/master/Extra_Help_PullingFromJSON/data.json")
+resp = requests.get("https://raw.githubusercontent.com/noahho1/Year_10_Design/master/Project_1/project_data.json")
 data = resp.json()
+resp2 = requests.get("")
 #pprint(data)
 
 #What we woudl do is read in all the questions and then use them to 
@@ -42,7 +43,6 @@ def next(*args):
 	print(ans)
 	cq = pdata[0]
 	if (ans == answers[cq]):
-		print("CORRECT")
 		labelR.config(text = "CORRECT")
 		x = random.randint(0,len(questions) - 1)
 		label.config(text = questions[x])
