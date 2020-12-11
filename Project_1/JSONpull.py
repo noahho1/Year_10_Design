@@ -2,11 +2,12 @@ import tkinter as tk
 import requests
 from pprint import pprint
 import random
+import json
 
 
-resp = requests.get("https://raw.githubusercontent.com/noahho1/Year_10_Design/master/Project_1/project_data.json")
+resp = requests.get("9https://raw.githubusercontent.com/noahho1/Year_10_Design/master/Project_1/project_data.json")
 data = resp.json()
-resp2 = requests.get("")
+
 #pprint(data)
 
 #What we woudl do is read in all the questions and then use them to 
@@ -14,6 +15,9 @@ resp2 = requests.get("")
 
 questions = []
 answers = []
+
+
+
 #pdata[0] --> current Question
 #pdata[1] --> current User
 #pdata[2] --> Question rigth

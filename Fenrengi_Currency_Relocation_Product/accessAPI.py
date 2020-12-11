@@ -35,13 +35,13 @@ print(value)
 
 def change(x):
 	print(x)
-	print(data["rates"][x])
+	
 root = tk.Tk()
 
 lab = tk.Label(root, text = "Select Currency")
 
 var = tk.StringVar(root)
-var.set(country[0])
+var.set(country[27])
 option_menu = tk.OptionMenu(root, var, *country, command = change)
 
 lab.pack()
