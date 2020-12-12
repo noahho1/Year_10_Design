@@ -1,10 +1,24 @@
 import tkinter as tk
 import requests
 import json
+from pprint import pprint
+import random
 
-uNames = ["user1@test.com", "user2@test.com"]
-pWords = ["pword1", "pword2"]
-ttables = ["1", "2", "3", "4"]
+resp = requests.get("https://raw.githubusercontent.com/noahho1/Year_10_Design/master/Project_1/data.json")
+data = resp.json()
+
+questions = []
+answers = []
+ttables = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+pdata = [0,"user1",0,0]
+
+#uNames = ["user1@test.com", "user2@test.com"]
+#pWords = ["pword1", "pword2"]
+
+#TAKING DATA FROM JSON FILE AND PUTTING IN LISTS QUESTIONS AND ANSWERS FOR USE IN PROGRAM
+for i in range(0, len(data),1):
+	questions.append(data[i]["question"])
+	answers.append(data[i]["answer"])
 
 def checkCred(*arg):
 
@@ -12,7 +26,16 @@ def checkCred(*arg):
 	loginFrame.pack_forget()
 	homeFrame.pack()
 
-
+#CHANGE Q IF ANSWER IS CORRECT
+def next(*args):
+	ans = ansent.get()
+	cq = pdata[0]
+	if (ans == answers[cq]):
+		print("CORRECT")
+		x = random.randint(0,len(questions) - 1)
+		label.config(text = questions[x])
+	else:
+		labelR.config(text = "WRONG")
 
 root = tk.Tk() #Creates your main window
 
@@ -69,17 +92,16 @@ pans2_label.pack()
 
 prac_label = tk.Label(f3, text = "Practice")
 prac2_label = tk.Label(f3, text = "Practice your times tables here!")
-que_label = tk.Label(f3, text = "Question:")
-que1_label = tk.Label(f3, text = " ")
+que_label = tk.Label(f3, text = questions[0])
 ansent = tk.Entry(f3)
-sub_button = tk.Button(f3xx)
+subbtn = tk.Button(f3, text = "NEXT", command = next)
+
 
 prac_label.pack()
 prac2_label.pack()
 que_label.pack()
-que1_label.pack()
 ansent.pack()
-sub_button.pack()
+subbtn.pack()
 
 display = tk.Label(f3, height = 25, width = 60, text = " ")
 display.pack()
