@@ -69,13 +69,15 @@ pans2_label.pack()
 
 prac_label = tk.Label(f3, text = "Practice")
 prac2_label = tk.Label(f3, text = "Practice your times tables here!")
-que_label = tk.Label(f3, text = "Question")
+que_label = tk.Label(f3, text = "Question:")
+que1_label = tk.Label(f3, text = " ")
 ansent = tk.Entry(f3)
-sub_button = tk.Button(f3)
+sub_button = tk.Button(f3xx)
 
 prac_label.pack()
 prac2_label.pack()
 que_label.pack()
+que1_label.pack()
 ansent.pack()
 sub_button.pack()
 
