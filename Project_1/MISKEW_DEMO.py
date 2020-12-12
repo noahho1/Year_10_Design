@@ -4,7 +4,7 @@ from pprint import pprint
 import random
 
 
-resp = requests.get("https://raw.githubusercontent.com/noahho1/Year_10_Design/master/Project_1/data.json")
+resp = requests.get("https://raw.githubusercontent.com/PMiskew/Year_10_Design/master/Extra_Help_PullingFromJSON/data.json")
 data = resp.json()
 #pprint(data)
 

@@ -10,6 +10,7 @@ data = resp.json()
 questions = []
 answers = []
 ttables = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+panswer = [" "]
 pdata = [0,"user1",0,0]
 
 #uNames = ["user1@test.com", "user2@test.com"]
@@ -31,15 +32,15 @@ def next(*args):
 	ans = ansent.get()
 	cq = pdata[0]
 	if (ans == answers[cq]):
-		print("CORRECT")
-		x = random.randint(0,len(questions) - 1)
-		label.config(text = questions[x])
+		labelR.config(text = "Correct")
+		x = random.randint(0, len(questions) -1)
+		que_label.config(text = questions[x])
 	else:
-		labelR.config(text = "WRONG")
+		labelR.config(text = "Wrong")
 
-root = tk.Tk() #Creates your main window
+root = tk.Tk() 
 
-#Build a login frame
+#Builds a login frame
 loginFrame = tk.Frame(root)
 
 flogin = tk.Frame(loginFrame, highlightbackground = "green", highlightthickness=5)
@@ -74,7 +75,7 @@ f3 = tk.Frame(homeFrame, highlightbackground = "cyan", highlightthickness=5)
 #Frame 1 Setup
 ttable_label = tk.Label(f1, text = "Select Times Table")
 variable = tk.StringVar(root)
-variable.set(ttables[0]) # default value - Set to Canadian
+variable.set(ttables[0]) 
 
 ttable_select = tk.OptionMenu(f1, variable, *ttables)
 
@@ -85,15 +86,22 @@ ttable_select.pack()
 
 pans_label = tk.Label(f2, text = "Past Answers")
 pans2_label = tk.Label(f2, text = "Select a past question to view your answer")
+variable1 = tk.StringVar(root)
+variable1.set(panswer[0]) 
+
+pans_select = tk.OptionMenu(f2, variable1, *panswer)
+
 
 pans_label.pack()
 pans2_label.pack()
+pans_select.pack()
 #Frame 3 Setup
 
 prac_label = tk.Label(f3, text = "Practice")
 prac2_label = tk.Label(f3, text = "Practice your times tables here!")
 que_label = tk.Label(f3, text = questions[0])
 ansent = tk.Entry(f3)
+labelR = tk.Label(f3,text = "ENTER AN ANSWER")
 subbtn = tk.Button(f3, text = "NEXT", command = next)
 
 
@@ -101,6 +109,7 @@ prac_label.pack()
 prac2_label.pack()
 que_label.pack()
 ansent.pack()
+labelR.pack()
 subbtn.pack()
 
 display = tk.Label(f3, height = 25, width = 60, text = " ")
