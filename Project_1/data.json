@@ -14,7 +14,7 @@
 	{
 		"question": "1 x 4",
 		"answer" : "4",
-	}
+	},
 	{
 		"question": "1 x 5",
 		"answer": "5",
@@ -30,7 +30,7 @@
 	{
 		"question": "1 x 8",
 		"answer" : "8",
-	}
+	},
 	{
 		"question": "1 x 9",
 		"answer": "9",
@@ -46,5 +46,5 @@
 	{
 		"question": "1 x 12",
 		"answer" : "12",
-	}
+	},
 ]
